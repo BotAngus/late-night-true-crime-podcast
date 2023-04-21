@@ -7,31 +7,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Late Night True Crime</title>
     <link rel="stylesheet" href="assets/css/tailwind.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/notify/0.4.2/notify.min.js"></script>
+    <script>
+        function share() {
+            $.notify("Link copied to clipboard", "success");
+            navigator.clipboard.writeText(window.location.href);
+        }
+    </script>
 </head>
 
-<body class="w-full h-full bg-gray-950">
-    <div class="relative top-0 h-full bg-gradient-to-b from-slate-500 to-black  ">
-        <div class="h-4"></div>
-        <div class="w-full h-20 flex pt-5 pb-5">
+<body class="w-screen h-screen bg-gray-950">
+    <div class="relative top-0 h-fit bg-gradient-to-b from-slate-500 to-black  ">
+        <div class="w-full h-20 flex pt-5 relative">
             <img src="assets/svg/arrow-left.svg" class="w-8 ml-5" alt="more"></img>
             <img src="assets/svg/dots.svg" class="w-8 ml-auto" alt="back">
         </div>
         <img src="assets/image/truecrime.jpg" class="w-20 rounded-lg ml-5" />
         <h2 class="font-bold text-white p-5 text-4xl">Late Night True Crime</h2>
-        <p class="font-bold text-white  pl-5">Marie Moreno</p>
+        <p class="font-bold text-white pl-5">Marie Moreno</p>
         <div class="flex">
-            <p class="text-gray-400  ml-5 mt-1 scale-y-75">27 APR 2023 </p>
+            <p class="text-gray-400  ml-5 mt-1">27 APR 2023 </p>
         </div>
     </div>
-    <div class="flex w-full flex-row justify-between">
+    <div class="flex w-full flex-row justify-between relative">
         <div class="bg-green-500 w-36 text-center rounded-full p-4 m-5 font-bold text-xl cursor-pointer">Play</div>
         <div class="w-1/3 flex justify-evenly">
-            <img src="assets/svg/share.svg" alt="share" class="w-5">
+            <img src="assets/svg/share.svg" alt="share" class="w-5 cursor-pointer" onclick="share()">
             <img src="assets/svg/save.svg" alt="save" class="w-5">
             <img src="assets/svg/download.svg" alt="download" class="w-5">
         </div>
     </div>
-    <div>
+    <div class="relative">
         <p class="text-gray-500 ml-5 mr-5">De plotselinge dood van Walt bracht duizenden vragen. Sommigen denken
             dat het de zakenpartner was, de politie denkt dat het een ongeluk was maar wij weten beter. Samen gaan we er
             achter komen wie de echte moordenaar was.</p>
@@ -49,15 +56,18 @@
         </div>
     </div>
     <div class="h-20"></div>
-    <div class="sticky bottom-0 w-full bg-transparent h-14 flex flex-col backdrop-brightness-50 ">
+    <div class="fixed bottom-0 w-full bg-transparent h-14 flex flex-col backdrop-brightness-50 ">
         <div class="flex justify-evenly">
-            <div><img src="assets/svg/home.svg" alt="home" class="w-8">
+            <div><img src="assets/svg/home.svg" alt="home" class="w-8 cursor-pointer"
+                    onclick="window.location.href='https://open.spotify.com/'">
                 <p class="text-gray-200 text-xs text-center">Home</p>
             </div>
-            <div><img src="assets/svg/search.svg" alt="search" class="w-8">
+            <div><img src="assets/svg/search.svg" alt="search" class="w-8 cursor-pointer"
+                    onclick="window.location.href='https://open.spotify.com/'">
                 <p class="text-gray-200 text-xs text-center">Search</p>
             </div>
-            <div><img src="assets/svg/library.svg" alt="library" class="w-8">
+            <div><img src="assets/svg/library.svg" alt="library" class="w-8 cursor-pointer"
+                    onclick="window.location.href='https://open.spotify.com/'">
                 <p class="text-gray-200 text-xs text-left">Library</p>
             </div>
         </div>
